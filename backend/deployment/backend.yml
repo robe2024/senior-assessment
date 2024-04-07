@@ -16,12 +16,11 @@ spec:
     spec:
       containers:
       - name: backend-hello-world
-        image: repositoryassessment.azurecr.io/repositoryassessment:latest
+        image: repositoryassessment.azurecr.io/backend:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
 ---
-# ClusterIP for internal communication only
 apiVersion: v1
 kind: Service
 metadata:
