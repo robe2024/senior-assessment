@@ -1,27 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    argocd.argoproj.io/sync-options: Validate=false
   name: backend-deployment
   labels:
-    app: backend-hello-world
+    app: backend-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend-hello-world
+      app: backend-app
   template:
     metadata:
       labels:
-        app: backend-hello-world
+        app: backend-app
     spec:
       containers:
-      - name: backend-hello-world
+      - name: backend-app
         image: repositoryassessment.azurecr.io/backend:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
+
 ---
 apiVersion: v1
 kind: Service
