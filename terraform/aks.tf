@@ -1,11 +1,11 @@
 locals {
   location       = var.spec.location
-  resource_group = var.spec.resource_group
   aks            = var.spec.aks
 }
 
+# AKS has own resouce group
 resource "azurerm_resource_group" "aks_rg" {
-  name     = local.resource_group
+  name     = local.aks.resource_group
   location = local.location
 }
 
