@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend-hello-world
-        image: backend:latest
+        image: repositoryassessment.azurecr.io/repositoryassessment:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
