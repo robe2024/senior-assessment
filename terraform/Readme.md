@@ -16,3 +16,8 @@ export ARM_TENANT_ID="<service_principal_tenant_id>"
 export ARM_CLIENT_SECRET="<service_principal_secret>"
 ```
 This is required to be stored in a safety place. It won't be visible again. It can be recreated.
+
+
+# ASK checking 
+
+az aks check-acr --resource-group ask-rg --name assessment-cluster --acr repositoryassessment.azurecr.io

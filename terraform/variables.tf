@@ -1,4 +1,4 @@
-variable spec {}
+variable "spec" {}
 # variable tfbackendStorageAccountRg {}
 # variable tfbackendStorageAccount {} 
 # variable tfbackendContainer {} 

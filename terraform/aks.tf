@@ -1,11 +1,11 @@
 locals {
-    location = var.spec.location
-    resource_group = var.spec.resource_group
-    aks = var.spec.aks
+  location       = var.spec.location
+  aks            = var.spec.aks
 }
 
+# AKS has own resouce group
 resource "azurerm_resource_group" "aks_rg" {
-  name     = local.resource_group
+  name     = local.aks.resource_group
   location = local.location
 }
 
@@ -26,15 +26,4 @@ resource "azurerm_kubernetes_cluster" "aks" {
   }
 
   tags = local.aks.tags
-}
-
-output "client_certificate" {
-  value     = azurerm_kubernetes_cluster.aks.kube_config[0].client_certificate
-  sensitive = true
-}
-
-output "kube_config" {
-  value = azurerm_kubernetes_cluster.aks.kube_config_raw
-
-  sensitive = true
 }
