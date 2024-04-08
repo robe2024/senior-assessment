@@ -27,14 +27,3 @@ resource "azurerm_kubernetes_cluster" "aks" {
 
   tags = local.aks.tags
 }
-
-output "client_certificate" {
-  value     = azurerm_kubernetes_cluster.aks.kube_config[0].client_certificate
-  sensitive = true
-}
-
-# Need this for a non-prod environment to be able to configure local kubectl
-output "kube_config" {
-  value = azurerm_kubernetes_cluster.aks.kube_config_raw
-  sensitive = true
-}
