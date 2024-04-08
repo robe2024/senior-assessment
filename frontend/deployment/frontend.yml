@@ -19,12 +19,11 @@ spec:
         image: repositoryassessment.azurecr.io/frontend:latest
         imagePullPolicy: IfNotPresent
         ports:
-        - name: liveness-port
-          containerPort: 4200
+        - containerPort: 4200
         readinessProbe:
           httpGet:
             path: /
-            port: liveness-port
+            port: 4200
             scheme: HTTP
           initialDelaySeconds: 5
           periodSeconds: 10
@@ -32,14 +31,14 @@ spec:
         livenessProbe:
           httpGet:
             path: /
-            port: liveness-port
+            port: 4200
             scheme: HTTP
           initialDelaySeconds: 5
           periodSeconds: 10
         startupProbe:
           httpGet:
             path: /
-            port: liveness-port
+            port: 4200
           failureThreshold: 30
           periodSeconds: 10
 ---
