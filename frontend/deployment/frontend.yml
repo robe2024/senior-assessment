@@ -21,7 +21,6 @@ spec:
         ports:
         - containerPort: 4200
 ---
-# ClusterIP for internal communication only
 apiVersion: v1
 kind: Service
 metadata:
@@ -32,3 +31,5 @@ spec:
   ports:
   - name: http
     port: 4200
+    targetPort: 4200
+  type: LoadBalancer
