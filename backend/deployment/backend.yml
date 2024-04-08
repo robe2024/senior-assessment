@@ -28,7 +28,7 @@ metadata:
   name: backend
 spec:
   selector:
-    app: backend-hello-world
+    app: backend-app
   ports:
   - name: http
     port: 8080
