@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-app
+  name: backend-deployment
   labels:
-    app: backend-hello-world
+    app: backend-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend-hello-world
+      app: backend-app
   template:
     metadata:
       labels:
-        app: backend-hello-world
+        app: backend-app
     spec:
       containers:
-      - name: backend-hello-world
+      - name: backend-app
         image: backend:04.05.2024
         imagePullPolicy: Never
         ports:
@@ -28,7 +28,7 @@ metadata:
   name: backend
 spec:
   selector:
-    app: backend-hello-world
+    app: backend-app
   ports:
   - name: http
     port: 8080
