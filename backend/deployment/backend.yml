@@ -17,7 +17,7 @@ spec:
       containers:
       - name: backend-app
         image: repositoryassessment.azurecr.io/backend:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
         readinessProbe:
