@@ -20,4 +20,4 @@ This is required to be stored in a safety place. It won't be visible again. It c
 
 # ASK checking 
 
-az aks check-acr --resource-group ask-rg --name assessment-cluster --acr repositoryassessment.azurecr.io
+az aks update -n assessment-cluster -g aks-rg --attach-acr repositoryassessment
